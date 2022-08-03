@@ -27,3 +27,8 @@ variable "source_tag" {
   description = "The value of the \"source\" tag added to the cluster"
   type        = string
 }
+
+variable "access_security_group_id" {
+  description = "The Security Group granting access to the cache"
+  type        = string
+}
