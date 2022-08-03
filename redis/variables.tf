@@ -15,8 +15,15 @@ variable "credentials" {
 
 variable "cluster_id" {
   description = "Id to assign the new cluster"
+  type        = string
 }
 
 variable "subnet_id" {
   description = "Subnet to create the redis cluster in"
+  type        = string
+}
+
+variable "source_tag" {
+  description = "The value of the \"source\" tag added to the cluster"
+  type        = string
 }

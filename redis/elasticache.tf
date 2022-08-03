@@ -1,7 +1,7 @@
 
 resource "aws_elasticache_subnet_group" "default" {
   name       = "${var.cluster_id}-cache-subnet"
-  subnet_ids = [ var.subnet_id ]
+  subnet_ids = [var.subnet_id]
 }
 
 resource "aws_elasticache_cluster" "example" {
@@ -13,4 +13,7 @@ resource "aws_elasticache_cluster" "example" {
   engine_version       = "6.2"
   port                 = 6379
   subnet_group_name    = aws_elasticache_subnet_group.default.name
+  tags = {
+    source = var.source_tag
+  }
 }
